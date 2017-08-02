@@ -19,7 +19,7 @@ app.use(forceSsl);
 // app.use(basicAuthGuard);
 
 // Serve the statically-built application output.
-const distPath = path.join(__dirname, '../build');
+const distPath = path.join(__dirname, '../dist');
 app.use(express.static(distPath));
 
 // For any URL that doesn't actively match a path, serve up index.html. This
