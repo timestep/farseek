@@ -16,7 +16,7 @@ export default {
   methods: {
     updateValue: debounce(function updateValue(value) {
       this.$emit('searchTerm', value.trim());
-    }, 300),
+    }, 200),
   },
 };
 </script>

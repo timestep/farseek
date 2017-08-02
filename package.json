@@ -5,6 +5,8 @@
   "author": "Kevin Sivabalan <kevin.sivabalan@gmail.com>",
   "private": true,
   "scripts": {
+    "postinstall": "npm run build",
+    "heroku": "node heroku/server.js",
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
@@ -16,6 +18,8 @@
   "dependencies": {
     "axios": "^0.16.2",
     "debounce": "^1.0.2",
+    "force-ssl-heroku": "^1.0.2",
+    "helmet": "^3.8.1",
     "vue": "^2.3.3",
     "vue-router": "^2.6.0"
   },
