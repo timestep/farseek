@@ -1,22 +1,38 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>{{ msg }}</h1>
-    <Search />
+    <Search @searchTerm="onSearch"/>
+    <CardImage :imageURI="imageURI"/>
   </div>
 </template>
 
 <script>
 import Search from './Search';
+import CardImage from './CardImage';
+import API from '../common/api';
 
 export default {
   name: 'hello',
   components: {
     Search,
+    CardImage,
   },
   data() {
     return {
       msg: 'Search for your card',
+      imageURI: '',
     };
+  },
+  methods: {
+    onSearch: function onSearch($event) {
+      const that = this;
+      API.getCardSearch($event)
+        .then(res => res.image_uri)
+        .then((image) => {
+          if (!image) return;
+          that.imageURI = image;
+        });
+    },
   },
 };
 </script>
