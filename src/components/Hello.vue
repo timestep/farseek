@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>{{ msg }}</h1>
+  <div class="pt4">
+    <h1 class="ma0 mb4">{{ msg }}</h1>
     <Search @searchTerm="onSearch"/>
     <CardImage :imageURI="imageURI"/>
   </div>
@@ -27,10 +27,10 @@ export default {
     onSearch: function onSearch($event) {
       const that = this;
       API.getCardSearch($event)
-        .then(res => res.image_uri)
-        .then((image) => {
-          if (!image) return;
-          that.imageURI = image;
+        .then(res => res.image_uris)
+        .then((images) => {
+          if (!images) return;
+          that.imageURI = images.png;
         });
     },
   },

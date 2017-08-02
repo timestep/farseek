@@ -1,7 +1,7 @@
 <template>
-  <div class="mw-100 mh-100">
+  <div class="w-100">
     <img
-      class="mw-100 mh-100"
+      class="w-30-l w-100-s w-50-m h-auto"
       :src="imageURI"
     />
   </div>

@@ -1,9 +1,8 @@
 <template>
-  <div class="w-100 min-h-100 vh-100 bg-black">
-    &nbsp;
+  <div class="w-100 vh-100 bg-black">
     <div
       id="app"
-      class="w-100 vh-100 content-center items-center"
+      class="w-100 vh-100 tc"
     >
       <router-view></router-view>
     </div>
