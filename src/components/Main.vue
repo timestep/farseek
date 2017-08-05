@@ -12,7 +12,7 @@ import CardImage from './CardImage';
 import API from '../common/api';
 
 export default {
-  name: 'hello',
+  name: 'main',
   components: {
     Search,
     CardImage,
@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       msg: 'Search for your card',
-      imageURI: '',
+      imageURI: null,
     };
   },
   methods: {
