@@ -2,6 +2,12 @@
 
 > A Vue.js project
 
+[![Build Status](https://travis-ci.org/timestep/farseek.png?branch=master)](https://travis-ci.org/timestep/farseek)
+
+[![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
+
+[![Node version](https://img.shields.io/node/v/[NPM-MODULE-NAME].svg?style=flat)](http://nodejs.org/download/)
+
 ## Build Setup
 
 ``` bash
