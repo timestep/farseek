@@ -8,8 +8,11 @@ deploy:
   app: farseek
   on:
     repo: timestep/farseek
+addons:
+  chrome: stable
 before_install:
   - npm i -g npm@5.3.0
   - pip install --user codecov
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 after_success:
   - codecov --file coverage/lcov.info --disable search
