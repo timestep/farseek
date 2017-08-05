@@ -8,8 +8,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'CardImage',
-  props: ['imageURI'],
+  computed: {
+    ...mapGetters({
+      imageURI: 'searchedCardImage',
+    }),
+  },
 };
 </script>
