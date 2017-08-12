@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapMutations } from 'vuex';
 import Search from './Search';
 import CardImage from './CardImage';
 
@@ -17,6 +17,16 @@ export default {
     Search,
     CardImage,
   },
+  mounted() {
+    const vm = this;
+    document.addEventListener('keydown', ($event) => {
+      if(keycode === 8) vm.searchClear();
+      else {
+        vm.searchUpdate($event.key);
+        vm.onSearch($event.key);
+      }
+    });
+  },
   data() {
     return {
       msg: 'Search for your card',
@@ -25,6 +35,10 @@ export default {
   methods: {
     ...mapActions({
       onSearch: 'onImageSearch',
+    }),
+    ...mapMutations({
+      searchClear: 'searchClear',
+      searchUpdate: 'searchUpdate',
     }),
   },
 };
