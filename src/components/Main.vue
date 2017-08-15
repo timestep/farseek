@@ -1,7 +1,6 @@
 <template>
   <div class="pt4">
-    <h1 class="ma0 mb4">{{ msg }}</h1>
-    <Search @searchTerm="onSearch"/>
+    <Search />
     <CardImage />
   </div>
 </template>
@@ -20,9 +19,9 @@ export default {
   mounted() {
     const vm = this;
     document.addEventListener('keydown', ($event) => {
-      if(keycode === 8) vm.searchClear();
-      else {
-        vm.searchUpdate($event.key);
+      if ($event.key === 'Backspace') {
+        vm.searchClear();
+      } else {
         vm.onSearch($event.key);
       }
     });
@@ -38,7 +37,6 @@ export default {
     }),
     ...mapMutations({
       searchClear: 'searchClear',
-      searchUpdate: 'searchUpdate',
     }),
   },
 };

@@ -6,4 +6,7 @@ export default {
   searchUpdate(state, newSearchTerm) {
     state.searchTerm = state.searchTerm.concat(newSearchTerm);
   },
+  searchClear(state) {
+    state.searchTerm = '';
+  },
 };
