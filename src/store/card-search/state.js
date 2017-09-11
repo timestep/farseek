@@ -1,5 +1,5 @@
 export default {
   searchTerm: '',
-  imageSearchResult: null,
+  card: {},
 };
 

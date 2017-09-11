@@ -1,6 +1,9 @@
 <template>
-  <div class="f1 b mb4 white">
-    {{searchQuery}}
+  <div class="white">
+    <div class="f1 mb4">Card Search</div>
+    <div class="f2 mb4">
+      {{searchQuery}}
+    </div>
   </div>
 </template>
 
