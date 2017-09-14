@@ -5,9 +5,10 @@ const api = axios.create({
   timeout: 1000,
 });
 
-const getCardSearch = searchTerm =>
-  api.get(`/cards/named?fuzzy=${searchTerm}`)
-    .then(res => res.data);
+const getCardSearch = async (searchTerm) => {
+  const { data } = await api.get(`/cards/named?fuzzy=${searchTerm}`);
+  return data;
+};
 
 export default {
   getCardSearch,

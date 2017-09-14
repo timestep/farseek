@@ -1,10 +1,10 @@
 import API from '../../common/api';
 
 export default {
-  onImageSearch({ commit, state }, inputKey) {
+  async onImageSearch({ commit, state }, inputKey) {
     commit('searchUpdate', inputKey);
     const searchTerm = state.searchTerm;
-    API.getCardSearch(searchTerm)
-      .then(res => commit('card', res));
+    const res = await API.getCardSearch(searchTerm);
+    commit('selectCard', res);
   },
 };

@@ -1,5 +1,5 @@
 export default {
   addCard({ commit, rootState }) {
-    commit('addCard', rootState.cardSearch.card);
+    commit('addCard', rootState.preview.card);
   },
 };

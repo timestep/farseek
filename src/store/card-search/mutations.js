@@ -6,7 +6,4 @@ export default {
   searchClear(state) {
     state.searchTerm = '';
   },
-  card(state, card) {
-    state.card = card;
-  },
 };

@@ -14,7 +14,7 @@ export default {
   name: 'CardImage',
   computed: {
     ...mapGetters({
-      imageURI: 'searchedCardImage',
+      imageURI: 'selectedCardImage',
     }),
   },
 };

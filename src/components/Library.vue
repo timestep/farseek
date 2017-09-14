@@ -11,7 +11,12 @@
         <th>Price</th>
         <th>Total Price</th>
       </tr>
-      <tr v-bind:key="index" v-for="(card, index) in cards">
+      <tr
+        class="cursor"
+        v-bind:key="index"
+        v-for="(card, index) in cards"
+        v-on:mouseover="selectCard(card)"
+      >
         <td>{{card.quantity}}</td>
         <td>{{card.name}}</td>
         <td>USD {{card.usd}}</td>
@@ -22,7 +27,11 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import {
+  mapGetters,
+  mapActions,
+  mapMutations,
+} from 'vuex';
 
 export default {
   name: 'library',
@@ -34,6 +43,9 @@ export default {
   methods: {
     ...mapActions({
       addCard: 'addCard',
+    }),
+    ...mapMutations({
+      selectCard: 'selectCard',
     }),
     calculateTotalPrice(card) {
       const totalCost = card.quantity * card.usd;
