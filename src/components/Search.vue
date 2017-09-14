@@ -17,9 +17,7 @@ export default {
     document.addEventListener('keydown', vm.search);
   },
   computed: {
-    ...mapGetters([
-      'searchQuery',
-    ]),
+    ...mapGetters(['searchQuery']),
   },
   methods: {
     ...mapActions({
