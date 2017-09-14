@@ -13,4 +13,14 @@ export default {
       state.cards = state.cards.concat(card);
     }
   },
+  removeCard(state, card) {
+    const index = state.cards.findIndex(filteredCard => filteredCard.id === card.id);
+    const newCards = clone(state.cards);
+    if (newCards[index].quantity === 1) {
+      newCards.splice(index, 1);
+    } else {
+      newCards[index].quantity--;
+    }
+    state.cards = newCards;
+  },
 };

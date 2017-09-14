@@ -3,7 +3,7 @@
     <div class="f1 white">
       Library
     </div>
-    <button class="w-25 mb3" v-on:click="addCard"> Add Card </button>
+    <!-- <button class="w-25 mb3" v-on:click="addCard"> Add Card </button> -->
     <table class="w-100 white">
       <tr>
         <th>Quantity</th>
@@ -16,6 +16,7 @@
         v-bind:key="index"
         v-for="(card, index) in cards"
         v-on:mouseover="selectCard(card)"
+        v-on:click="removeCard(card)"
       >
         <td>{{card.quantity}}</td>
         <td>{{card.name}}</td>
@@ -46,6 +47,7 @@ export default {
     }),
     ...mapMutations({
       selectCard: 'selectCard',
+      removeCard: 'removeCard',
     }),
     calculateTotalPrice(card) {
       const totalCost = card.quantity * card.usd;

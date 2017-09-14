@@ -11,14 +11,13 @@ const inputKeyMapStoreGen = ({ dispatch, commit, state }) => ({
     dispatch('addCard');
   },
   Meta: () => {},
-  Default: async (inputKey) => {
+  Default: async inputKey => {
     commit('searchUpdate', inputKey);
     const searchTerm = state.searchTerm;
     const res = await API.getCardSearch(searchTerm);
     commit('selectCard', res);
   },
 });
-
 
 export default {
   async onImageSearch(store, $event) {

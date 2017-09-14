@@ -14,13 +14,17 @@ module.exports = {
     expect: true,
     sinon: true
   },
-  extends: 'airbnb-base',
+  extends: [
+    'airbnb-base',
+    'prettier'
+  ],
   // required to lint *.vue files
   plugins: [
-    'html'
+    'html',
+    'prettier',
   ],
   // check if imports actually resolve
-  'settings': {
+  settings: {
     'import/resolver': {
       'webpack': {
         'config': 'build/webpack.base.conf.js'
@@ -28,7 +32,14 @@ module.exports = {
     }
   },
   // add your custom rules here
-  'rules': {
+  rules: {
+    "prettier/prettier": ["error", {
+      "singleQuote": true,
+      "trailingComma": "all",
+      "bracketSpacing": true,
+      "jsxBracketSameLine": true,
+      "parser": "flow"
+    }],
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       'js': 'never',
