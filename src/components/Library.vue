@@ -3,7 +3,6 @@
     <div class="f1 white">
       Library
     </div>
-    <!-- <button class="w-25 mb3" v-on:click="addCard"> Add Card </button> -->
     <table class="w-100 white">
       <tr>
         <th>Quantity</th>
