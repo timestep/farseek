@@ -8,19 +8,13 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapMutations } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'search',
   mounted() {
     const vm = this;
-    document.addEventListener('keydown', ($event) => {
-      if ($event.key === 'Backspace') {
-        vm.searchClear();
-      } else {
-        vm.onSearch($event.key);
-      }
-    });
+    document.addEventListener('keydown', vm.search);
   },
   computed: {
     ...mapGetters([
@@ -29,10 +23,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      onSearch: 'onImageSearch',
-    }),
-    ...mapMutations({
-      searchClear: 'searchClear',
+      search: 'onImageSearch',
     }),
   },
 };
