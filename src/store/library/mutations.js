@@ -3,7 +3,9 @@ import { clone } from 'ramda';
 
 export default {
   addCard(state, card) {
-    const index = state.cards.findIndex(filteredCard => filteredCard.id === card.id);
+    const index = state.cards.findIndex(
+      filteredCard => filteredCard.id === card.id,
+    );
     if (index > -1) {
       const newCards = clone(state.cards);
       newCards[index].quantity++;
@@ -14,7 +16,9 @@ export default {
     }
   },
   removeCard(state, card) {
-    const index = state.cards.findIndex(filteredCard => filteredCard.id === card.id);
+    const index = state.cards.findIndex(
+      filteredCard => filteredCard.id === card.id,
+    );
     const newCards = clone(state.cards);
     if (newCards[index].quantity === 1) {
       newCards.splice(index, 1);

@@ -14,15 +14,10 @@ Vue.config.productionTip = false;
 
 const localStorageOptions = {
   key: 'farseek',
-  paths: [
-    'library',
-  ],
+  paths: ['library'],
 };
 
-const plugins = [
-  createLogger(),
-  createPersistedState(localStorageOptions),
-];
+const plugins = [createLogger(), createPersistedState(localStorageOptions)];
 
 const store = new Vuex.Store({
   modules,
