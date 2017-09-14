@@ -28,11 +28,7 @@
 </template>
 
 <script>
-import {
-  mapGetters,
-  mapActions,
-  mapMutations,
-} from 'vuex';
+import { mapGetters, mapActions, mapMutations } from 'vuex';
 
 export default {
   name: 'library',
