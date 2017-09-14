@@ -12,7 +12,7 @@
         <th>Total Price</th>
       </tr>
       <tr
-        class="cursor"
+        class="pointer"
         v-bind:key="index"
         v-for="(card, index) in cards"
         v-on:mouseover="selectCard(card)"

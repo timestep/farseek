@@ -6,4 +6,7 @@ export default {
   searchClear(state) {
     state.searchTerm = '';
   },
+  deleteLastCharSearch(state) {
+    state.searchTerm = state.searchTerm.slice(0, -1);
+  },
 };
