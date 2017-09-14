@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { mapActions, mapMutations } from 'vuex';
 import Search from './Search';
 import CardImage from './CardImage';
 import Library from './Library';
@@ -22,29 +21,6 @@ export default {
     Search,
     CardImage,
     Library,
-  },
-  mounted() {
-    const vm = this;
-    document.addEventListener('keydown', ($event) => {
-      if ($event.key === 'Backspace') {
-        vm.searchClear();
-      } else {
-        vm.onSearch($event.key);
-      }
-    });
-  },
-  data() {
-    return {
-      msg: 'Search for your card',
-    };
-  },
-  methods: {
-    ...mapActions({
-      onSearch: 'onImageSearch',
-    }),
-    ...mapMutations({
-      searchClear: 'searchClear',
-    }),
   },
 };
 </script>
