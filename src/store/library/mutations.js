@@ -1,30 +1,25 @@
 /* eslint no-param-reassign: 0, */
 import { clone } from 'ramda';
+import { libraryCardIndexFunc } from './utils';
 
 export default {
   addCard(state, card) {
-    const index = state.cards.findIndex(
-      filteredCard => filteredCard.id === card.id,
-    );
-    if (index > -1) {
-      const newCards = clone(state.cards);
-      newCards[index].quantity++;
-      state.cards = newCards;
-    } else {
-      card.quantity = 1;
-      state.cards = state.cards.concat(card);
-    }
+    card.quantity = 1;
+    state.cards = state.cards.concat(card);
   },
-  removeCard(state, card) {
-    const index = state.cards.findIndex(
-      filteredCard => filteredCard.id === card.id,
-    );
+  setQuantity(state, { card, newQuantity }) {
+    const cardIndex = libraryCardIndexFunc(state.cards)(card);
     const newCards = clone(state.cards);
-    if (newCards[index].quantity === 1) {
-      newCards.splice(index, 1);
-    } else {
-      newCards[index].quantity--;
-    }
+    newCards[cardIndex].quantity = newQuantity;
     state.cards = newCards;
+  },
+  deleteCard(state, card) {
+    const cardIndex = libraryCardIndexFunc(state.cards)(card);
+    const newCards = clone(state.cards);
+    newCards.splice(cardIndex, 1);
+    state.cards = newCards;
+  },
+  clearLibrary(state) {
+    state.cards = [];
   },
 };

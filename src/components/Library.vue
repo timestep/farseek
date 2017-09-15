@@ -1,8 +1,9 @@
 <template>
   <div class="flex flex-column items-center">
     <div class="f1 white">
-      Library
+      Library [Total # of Cards {{totalNumberofCards(cards)}}]
     </div>
+    <button v-on:click="clearLibrary">Clear Library</button>
     <table class="w-100 white">
       <tr>
         <th>Quantity</th>
@@ -39,14 +40,19 @@ export default {
   methods: {
     ...mapActions({
       addCard: 'addCard',
+      removePreviewCard: 'removeCard',
     }),
     ...mapMutations({
       selectCard: 'selectCard',
-      removeCard: 'removeCard',
+      clearLibrary: 'clearLibrary',
     }),
     calculateTotalPrice(card) {
       const totalCost = card.quantity * card.usd;
       return totalCost.toFixed(2);
+    },
+    totalNumberofCards(cards) {
+      const sum = (acc, card) => acc + card.quantity;
+      return cards.reduce(sum, 0);
     },
   },
 };
