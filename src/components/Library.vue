@@ -40,7 +40,7 @@ export default {
   methods: {
     ...mapActions({
       addCard: 'addCard',
-      removePreviewCard: 'removeCard',
+      removeCard: 'removePreviewCard',
     }),
     ...mapMutations({
       selectCard: 'selectCard',

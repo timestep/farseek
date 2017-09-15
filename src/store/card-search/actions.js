@@ -1,4 +1,4 @@
-import API from '../../common/api';
+import { API } from '../../common';
 
 const inputKeyMapStoreGen = ({ dispatch, commit, state }) => ({
   Backspace: async () => {
@@ -19,13 +19,15 @@ const inputKeyMapStoreGen = ({ dispatch, commit, state }) => ({
   },
 });
 
+const onImageSearch = async (store, $event) => {
+  const inputKeyMap = inputKeyMapStoreGen(store);
+  if (inputKeyMap[$event.key]) {
+    inputKeyMap[$event.key]();
+  } else {
+    inputKeyMap.Default($event.key);
+  }
+};
+
 export default {
-  async onImageSearch(store, $event) {
-    const inputKeyMap = inputKeyMapStoreGen(store);
-    if (inputKeyMap[$event.key]) {
-      inputKeyMap[$event.key]();
-    } else {
-      inputKeyMap.Default($event.key);
-    }
-  },
+  onImageSearch,
 };

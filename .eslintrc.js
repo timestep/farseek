@@ -44,6 +44,7 @@ module.exports = {
         optionalDependencies: ['test/unit/index.js'],
       },
     ],
+    'import/prefer-default-export': 0,
     'no-plusplus': 0,
     'linebreak-style': 0,
     // allow debugger during development
