@@ -6,6 +6,7 @@
     </div>
     <div class="w-75 mt4">
       <Library />
+      <Analyzers />
     </div>
   </div>
 </template>
@@ -14,6 +15,7 @@
 import Search from './Search';
 import CardImage from './CardImage';
 import Library from './Library';
+import Analyzers from './Analyzers';
 
 export default {
   name: 'main',
@@ -21,6 +23,7 @@ export default {
     Search,
     CardImage,
     Library,
+    Analyzers,
   },
 };
 </script>
