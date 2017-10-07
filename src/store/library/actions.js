@@ -11,11 +11,8 @@ export default {
     const cardExists = libraryContainsCardFunc(state.cards)(card);
     const cardInLibrary = state.cards[cardIndex];
     if (cardExists && isBasicLandCard(card)) {
-      const newQuantity = cardInLibrary.quantity + 1;
+      const newQuantity = parseInt(cardInLibrary.quantity, 10) + 1;
       commit('setQuantity', { card, newQuantity });
-    } else if (cardExists) {
-      // card.quantity = 1;
-      // max limit reached message
     } else {
       commit('addCard', card);
     }

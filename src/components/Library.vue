@@ -9,7 +9,6 @@
         <th>Quantity</th>
         <th>Name</th>
         <th>Price</th>
-        <th>Total Price</th>
       </tr>
       <tr
         class="pointer"
@@ -21,7 +20,6 @@
         <td>{{card.quantity}}</td>
         <td>{{card.name}}</td>
         <td>USD {{card.usd}}</td>
-        <td>USD {{calculateTotalPrice(card)}} </td>
       </tr>
     </table>
   </div>

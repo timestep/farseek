@@ -10,7 +10,7 @@ export default {
   setQuantity(state, { card, newQuantity }) {
     const cardIndex = libraryCardIndexFunc(state.cards)(card);
     const newCards = clone(state.cards);
-    newCards[cardIndex].quantity = newQuantity;
+    newCards[cardIndex].quantity = parseInt(newQuantity, 10);
     state.cards = newCards;
   },
   deleteCard(state, card) {
