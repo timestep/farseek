@@ -12,6 +12,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "postinstall": "npm run build",
     "precommit": "lint-staged",
+    "prepush": "npm test && npm build",
     "start": "node build/dev-server.js",
     "test": "npm run unit && npm run e2e",
     "unit:watch":
