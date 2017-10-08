@@ -44,6 +44,8 @@ module.exports = {
         optionalDependencies: ['test/unit/index.js'],
       },
     ],
+    'prefer-destructuring': 0,
+    'no-restricted-globals': 0,
     'import/prefer-default-export': 0,
     'no-plusplus': 0,
     'linebreak-style': 0,
