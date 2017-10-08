@@ -16,5 +16,6 @@ addons:
 before_install:
   - npm i -g npm@5.4.1
   - pip install --user codecov
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 after_success:
   - codecov --file test/unit/coverage/lcov.info --disable search
