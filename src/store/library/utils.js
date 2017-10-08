@@ -48,7 +48,7 @@ const buildManaData = cards =>
 const buildCMCData = cards =>
   pipe(map(card => card.cmc), reduce(cmcAcc, {}), buildDataSet)(cards);
 
-export {
+export default {
   isSameCard,
   isBasicLandCard,
   libraryCardIndexFunc,

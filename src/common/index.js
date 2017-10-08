@@ -1,2 +1,7 @@
-export * from './api';
-export * from './utils';
+import api from './api';
+import utils from './utils';
+
+export default {
+  api,
+  utils,
+};
