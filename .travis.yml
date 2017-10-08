@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "6.11.2"
+  - "6.11.4"
 cache:
   directories:
     - node_modules
@@ -14,7 +14,7 @@ deploy:
 addons:
   chrome: stable
 before_install:
-  - npm i -g npm@5.4.1
+  - npm i -g npm@5.4.2
   - pip install --user codecov
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 after_success:
