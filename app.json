@@ -2,9 +2,15 @@
   "name": "farseek",
   "scripts": {},
   "env": {
+    "NODE_ENV": {
+      "description":
+        "Set the `NODE_ENV` environment variable to `production` to disable debugging etc.",
+      "value": "production"
+    },
     "NPM_CONFIG_PRODUCTION": {
-      "description": "NPM_CONFIG_PRODUCTION",
-      "value": true
+      "description":
+        "By default Heroku is not installing `devDependencies`, so let's do that.",
+      "value": "false"
     }
   },
   "formation": {},
