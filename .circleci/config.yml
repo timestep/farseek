@@ -2,12 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.6.0
+      - image: timestep/farseek:0.0.1
     steps:
       - checkout
-      - run:
-          name: Java
-          command: 'sudo apt-get update && sudo apt install -t jessie-backports openjdk-8-jre-headless ca-certificates-java'
       - run:
           name: node version && npm version
           command: 'node -v && npm -v'
