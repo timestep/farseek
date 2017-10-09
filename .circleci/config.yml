@@ -16,9 +16,8 @@ jobs:
             name: unit-test
             command: npm run unit
         - run:
-          name: Running X virtual framebuffer
-          command: xvfb -ac :99 -screen 0 1280x1024x16 +extension RANDR
-          background: true
+            name: Running X virtual framebuffer
+            command: xvfb -ac :99 -screen 0 1280x1024x16 +extension RANDR &
         - run:
             name: e2e-test
             command: xvfb-run npm run e2e
