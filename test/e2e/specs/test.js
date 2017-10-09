@@ -11,7 +11,7 @@ module.exports = {
     browser
       .url(devServer)
       .waitForElementVisible('#app', 5000)
-      .assert.containsText('h1', 'Search for your card')
+      .assert.containsText('#searchCardTitle', 'Card Search')
       .end();
   },
 };

@@ -10,6 +10,6 @@ const getCardSearch = async searchTerm => {
   return data;
 };
 
-export const API = {
+export default {
   getCardSearch,
 };
