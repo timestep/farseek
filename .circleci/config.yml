@@ -16,7 +16,7 @@ jobs:
           command: npm run unit
       - run:
           name: e2e-test
-          command: npm run e2e
+          command: google-chrome --version && npm run e2e
       - run:
           name: code-coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'
