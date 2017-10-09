@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-        - image: timestep/farseek:0.0.3
+        - image: timestep/farseek:0.0.4
         - image: selenium/standalone-chrome:latest
     steps:
         - checkout
