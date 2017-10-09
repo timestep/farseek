@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    docker:
+        - image: timestep/farseek:0.0.4
+        # - image: selenium/standalone-chrome:latest
+    steps:
+        - checkout
+        - run:
+            name: node version && npm version
+            command: 'node -v && npm -v'
+        - run:
+            name: install-npm-vue
+            command: npm install
+        - run:
+            name: build
+            command: npm run build
+        - run:
+            name: unit-test
+            command: npm run unit
+        # - run:
+        #     name: e2e-test
+        #     command: npm run e2e

@@ -1,4 +1,4 @@
-import { API } from '../../common';
+import API from '../../common/api';
 
 const inputKeyMapStoreGen = ({ dispatch, commit, state }) => ({
   Backspace: async () => {

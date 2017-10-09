@@ -46,9 +46,10 @@ module.exports = {
     ],
     'prefer-destructuring': 0,
     'no-restricted-globals': 0,
-    'import/prefer-default-export': 0,
+    // 'import/prefer-default-export': 0,
     'no-plusplus': 0,
     'linebreak-style': 0,
+    'function-paren-newline': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
   },

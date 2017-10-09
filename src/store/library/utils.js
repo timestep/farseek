@@ -1,9 +1,9 @@
 import { map, reduce, flatten, pipe, keys, values } from 'ramda';
-import { BASIC_LANDS } from '../../common/utils';
+import utils from '../../common/utils';
 
 const isSameCard = card => filteredCard => filteredCard.id === card.id;
 
-const isBasicLandCard = card => BASIC_LANDS.includes(card.name);
+const isBasicLandCard = card => utils.BASIC_LANDS.includes(card.name);
 
 const libraryCardIndexFunc = library => card =>
   library.findIndex(isSameCard(card));
@@ -48,7 +48,7 @@ const buildManaData = cards =>
 const buildCMCData = cards =>
   pipe(map(card => card.cmc), reduce(cmcAcc, {}), buildDataSet)(cards);
 
-export {
+export default {
   isSameCard,
   isBasicLandCard,
   libraryCardIndexFunc,
