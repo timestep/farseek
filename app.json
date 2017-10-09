@@ -1,14 +1,11 @@
 {
   "name": "farseek",
-  "scripts": {
-  },
+  "scripts": {},
   "env": {
+    "NPM_CONFIG_PRODUCTION": false
   },
-  "formation": {
-  },
-  "addons": [
-
-  ],
+  "formation": {},
+  "addons": [],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
