@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
         - image: timestep/farseek:0.0.4
-        - image: selenium/standalone-chrome:latest
+        # - image: selenium/standalone-chrome:latest
     steps:
         - checkout
         - run:
@@ -15,9 +15,6 @@ jobs:
         - run:
             name: unit-test
             command: npm run unit
-        - run:
-            name: Running X virtual framebuffer
-            command: xvfb -ac :99 -screen 0 1280x1024x16 +extension RANDR &
         - run:
             name: e2e-test
             command: npm run e2e
