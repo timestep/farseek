@@ -2,21 +2,22 @@ version: 2
 jobs:
   build:
     docker:
-      - image: timestep/farseek:0.0.2
+        - image: timestep/farseek:0.0.2
+        - image: selenium/standalone-chrome:latest
     steps:
-      - checkout
-      - run:
-          name: node version && npm version
-          command: 'node -v && npm -v'
-      - run:
-          name: install-npm-vue
-          command: npm install
-      - run:
-          name: unit-test
-          command: npm run unit
-      - run:
-          name: e2e-test
-          command: google-chrome --version && npm run e2e
-      - run:
-          name: code-coverage
-          command: './node_modules/.bin/nyc report --reporter=text-lcov'
+        - checkout
+        - run:
+            name: node version && npm version
+            command: 'node -v && npm -v'
+        - run:
+            name: install-npm-vue
+            command: npm install
+        - run:
+            name: unit-test
+            command: npm run unit
+        - run:
+            name: e2e-test
+            command: npm run e2e
+        - run:
+            name: code-coverage
+            command: './node_modules/.bin/nyc report --reporter=text-lcov'
