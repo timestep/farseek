@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-        - image: timestep/farseek:0.0.2
+        - image: timestep/farseek:0.0.3
         - image: selenium/standalone-chrome:latest
     steps:
         - checkout
@@ -16,8 +16,12 @@ jobs:
             name: unit-test
             command: npm run unit
         - run:
+          name: Running X virtual framebuffer
+          command: Xvfb -ac :99 -screen 0 1280x1024x16 +extension RANDR
+          background: true
+        - run:
             name: e2e-test
-            command: npm run e2e
+            command: xvfb-run npm run e2e
         - run:
             name: code-coverage
             command: './node_modules/.bin/nyc report --reporter=text-lcov'
