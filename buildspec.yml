@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Node Packages...
+      - npm install
+  build:
+    commands:
+      - echo Build Source Code
+      - npm run build
+  post_build:
+    commands:
+      - echo Lint Files
+      - echo npm run lint
+      - echo Test
+      - echo npm run test
